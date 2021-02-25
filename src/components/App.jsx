@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import RecipeList from './RecipeList';
 import '../css/app.css';
-import uuidv4 from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const [recipes, setRecipes] = useState(sampleRecipes);
