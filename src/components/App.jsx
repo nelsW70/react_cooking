@@ -1,5 +1,6 @@
 import React from 'react';
 import RecipeList from './RecipeList';
+import '../css/app.css';
 
 function App() {
   return <RecipeList recipes={sampleRecipes} />;
@@ -31,7 +32,7 @@ const sampleRecipes = [
     name: 'Plain Pork',
     servings: 5,
     cookTime: '0:45',
-    instructions: '1. Put parpika on pork \n2. Put pork in oven \n3. Eat pork',
+    instructions: '1. Put paprika on pork \n2. Put pork in oven \n3. Eat pork',
     ingredients: [
       {
         id: 1,
