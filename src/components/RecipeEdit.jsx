@@ -1,7 +1,7 @@
 import React from 'react';
 import RecipeIngredientEdit from './RecipeIngredientEdit';
 
-export default function RecipeEdit() {
+export default function RecipeEdit({ recipe }) {
   return (
     <div className="recipe-edit">
       <div className="recipe-edit__remove-button-container ">
@@ -16,6 +16,7 @@ export default function RecipeEdit() {
           type="text"
           name="name"
           id="name"
+          value={recipe.name}
         />
         <label className="recipe-edit__label" htmlFor="cookTime">
           Cook Time
@@ -25,6 +26,7 @@ export default function RecipeEdit() {
           type="text"
           name="cookTime"
           id="cookTime"
+          value={recipe.cookTime}
         />
         <label className="recipe-edit__label" htmlFor="servings">
           Servings
@@ -35,6 +37,7 @@ export default function RecipeEdit() {
           min="1"
           name="servings"
           id="servings"
+          value={recipe.servings}
         />
         <label className="recipe-edit__label" htmlFor="instructions">
           Instructions
@@ -43,6 +46,7 @@ export default function RecipeEdit() {
           className="recipe-edit__input"
           name="instructions"
           id="instructions"
+          value={recipe.instructions}
         ></textarea>
       </div>
       <br />
@@ -51,9 +55,9 @@ export default function RecipeEdit() {
         <div>Name</div>
         <div>Amount</div>
         <div></div>
-        <RecipeIngredientEdit />
-        <RecipeIngredientEdit />
-        {/* Ingredient Components */}
+        {recipe.ingredients.map(ingredient => (
+          <RecipeIngredientEdit key={ingredient.id} ingredient={ingredient} />
+        ))}
       </div>
       <div className="recipe-edit__add-ingredient-btn-container">
         <button className="btn btn--primary">Add Ingredient</button>

@@ -49,7 +49,7 @@ textarea.recipe-edit__input {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(3, auto);
-  margin: 20px 0 0 0;
+  margin: 20px 0 0 40px;
 }
 
 .recipe-edit__add-ingredient-btn-container {
